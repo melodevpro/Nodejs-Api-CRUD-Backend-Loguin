@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const config = require('./config');
 const clientes = require('./modulos/clientes/rutas');
+const morgan = require('morgan');
+
+// Middlewares
+app.use(morgan('dev'));
 
 // configuracion del servidor
 app.set('port', config.app.port);
